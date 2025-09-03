@@ -10,6 +10,7 @@ const HeroSection = () => {
 		if (!searchTerm) return;
 
 		alert(searchTerm);
+		setSearchTerm("");
 	};
 	return (
 		<div className="w-full h-screen bg-[#F7F7F7] flex  items-center justify-center relative overflow-hidden">
