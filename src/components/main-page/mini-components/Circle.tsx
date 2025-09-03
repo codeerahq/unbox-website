@@ -35,7 +35,7 @@ const Circle: React.FC<CircleProps> = ({ imageSrc, title, link }) => {
 			) : (
 				content
 			)}
-			<h1 className="mt-2 text-base font-medium">
+			<h1 className="mt-2 text-sm font-medium transition-transform duration-400 group-hover:scale-105">
 				{title}
 			</h1>
 		</div>
