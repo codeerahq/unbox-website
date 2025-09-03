@@ -1,19 +1,43 @@
 "use client";
 
 import { Search } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 const HeroSection = () => {
 	const [searchTerm, setSearchTerm] = useState("");
+	const controls = useAnimation();
+
+	useEffect(() => {
+		const handleScroll = () => {
+			// Calculate scroll progress (0 at top, 1 at 300px scroll)
+			const progress = Math.min(window.scrollY / 300, 1);
+			// Interpolate width and borderRadius
+			const width = 90 + 10 * progress; // 95% to 100%
+			const radius = 16 - 16 * progress; // 16px to 0px
+			controls.start({
+				width: `${width}%`,
+				borderRadius: `${radius}px`,
+				transition: { type: "tween", duration: 0.1 },
+			});
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, [controls]);
 
 	const onSearchChange = () => {
 		if (!searchTerm) return;
-
 		alert(searchTerm);
 	};
+
 	return (
-		<div className="w-full h-screen bg-[#FFFFFF] flex  items-center justify-center relative overflow-hidden">
-			<div className="background-curve-container h-full w-[97%] rounded-4xl overflow-x-hidden relative">
+		<div className="w-full h-screen bg-[#ececec] flex items-center justify-center relative overflow-hidden">
+			<motion.div
+				className="background-curve-container h-full overflow-x-hidden relative"
+				initial={{ width: "90%", borderRadius: "16px" }}
+				animate={controls}
+				style={{ willChange: "width, borderRadius" }}
+			>
 				<video
 					src="main-page/hero-section/main.mp4"
 					autoPlay
@@ -21,8 +45,8 @@ const HeroSection = () => {
 					muted
 					className="object-cover w-full h-full"
 				/>
-			</div>
-			<div className="absolute flex flex-col items-center justify-center gap-4 inset-0 p-8">
+			</motion.div>
+		<div className="absolute flex flex-col items-center justify-center gap-4 inset-0 p-8">
 				<h1 className="text-white text-8xl font-bold tracking-tighter">
 					Unbox Travel Studio
 				</h1>
