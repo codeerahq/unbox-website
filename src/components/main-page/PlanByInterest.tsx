@@ -50,9 +50,9 @@ const PlanByInterest = () => {
 	];
 
 	return (
-		<div className="w-full h-120 bg-[#FFFFFF] flex flex-col items-center justify-center">
+		<div className="w-full py-20 bg-[#FFFFFF] flex flex-col items-center justify-center">
 			<div className="elem-01">
-				<h1 className="text-3xl font-semibold text-center tracking-tight">
+				<h1 className="text-4xl font-semibold text-center tracking-tight">
 					<em>Plan By Interest</em>
 				</h1>
 				<p className="text-lg text-gray-600 mt-4 font-semibold text-center tracking-tight">
