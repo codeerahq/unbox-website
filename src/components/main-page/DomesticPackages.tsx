@@ -3,7 +3,7 @@
 import React from "react";
 import { Compass, Plane } from "lucide-react";
 import Slider from "react-slick";
-import PackageCard from "./PackageCard";
+import PackageCard from "./mini-components/PackageCard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -15,7 +15,7 @@ const domesticPackagesData = [
 		subtitle: "Cold Desert Adventure",
 		price: "₹16,499",
 		originalPrice: "₹20,999",
-		image: "/api/placeholder/400/300", // Replace with actual image
+		image: "https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=800",
 		duration: "6 Days",
 		groupSize: "8-12 People",
 		location: "Himachal Pradesh",
@@ -26,7 +26,7 @@ const domesticPackagesData = [
 		title: "Uttarakhand",
 		subtitle: "Mountain Retreat",
 		price: "₹7,500",
-		image: "/api/placeholder/400/300", // Replace with actual image
+		image: "https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg?auto=compress&cs=tinysrgb&w=800",
 		duration: "4 Days",
 		groupSize: "6-10 People",
 		location: "Uttarakhand"
@@ -37,7 +37,7 @@ const domesticPackagesData = [
 		subtitle: "Hill Station Escape",
 		price: "₹6,999",
 		originalPrice: "₹9,999",
-		image: "/api/placeholder/400/300", // Replace with actual image
+		image: "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=800",
 		duration: "5 Days",
 		groupSize: "4-8 People",
 		location: "Himachal Pradesh"
@@ -47,7 +47,7 @@ const domesticPackagesData = [
 		title: "Kashmir",
 		subtitle: "Paradise on Earth",
 		price: "₹22,999",
-		image: "/api/placeholder/400/300", // Replace with actual image
+		image: "https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=800",
 		duration: "7 Days",
 		groupSize: "6-12 People",
 		location: "Jammu & Kashmir",
@@ -59,7 +59,7 @@ const domesticPackagesData = [
 		subtitle: "High Altitude Desert",
 		price: "₹20,999",
 		originalPrice: "₹25,999",
-		image: "/api/placeholder/400/300", // Replace with actual image
+		image: "https://images.pexels.com/photos/1660995/pexels-photo-1660995.jpeg?auto=compress&cs=tinysrgb&w=800",
 		duration: "8 Days",
 		groupSize: "4-10 People",
 		location: "Ladakh"
@@ -69,7 +69,7 @@ const domesticPackagesData = [
 		title: "Rajasthan",
 		subtitle: "Royal Heritage",
 		price: "₹12,999",
-		image: "/api/placeholder/400/300", // Replace with actual image
+		image: "https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&w=800",
 		duration: "6 Days",
 		groupSize: "8-15 People",
 		location: "Rajasthan"
@@ -86,7 +86,7 @@ const DomesticPackages = () => {
 	// Slider settings
 	const sliderSettings = {
 		dots: true,
-		infinite: false,
+		infinite: true,
 		speed: 500,
 		slidesToShow: 4,
 		slidesToScroll: 1,
