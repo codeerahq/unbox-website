@@ -14,7 +14,7 @@ const HeroSection = () => {
 	};
 	return (
 		<div className="w-full h-screen bg-[#F7F7F7] flex  items-center justify-center relative overflow-hidden">
-			<div className="background-curve-container h-[85%] w-[90%] rounded-4xl overflow-x-hidden relative">
+			<div className="background-curve-container h-[90%] w-[95%] rounded-4xl overflow-x-hidden relative">
 				<video
 					src="main-page/hero-section/main.mp4"
 					autoPlay
