@@ -1,3 +1,5 @@
+import DomesticPackages from "@/components/main-page/DomesticPackages";
+import Faqs from "@/components/main-page/Faqs";
 import HereSection from "@/components/main-page/HeroSection";
 import JoinTheTravelRevolution from "@/components/main-page/JoinTheTravelRevolution";
 import PlanByInterest from "@/components/main-page/PlanByInterest";
@@ -9,8 +11,10 @@ const Home = () => {
 		<div className="home w-full h-screen overflow-x-hidden ">
 			<HereSection />
 			<PlanByInterest />
+			<DomesticPackages />
 			<JoinTheTravelRevolution />
 			<UnSpokenTruth />
+			<Faqs />
 		</div>
 	);
 };
