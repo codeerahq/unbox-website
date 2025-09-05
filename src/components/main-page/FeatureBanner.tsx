@@ -23,7 +23,6 @@ const banners = [
 ];
 
 const FeatureBanner = () => {
-
 	const settings = {
 		dots: false,
 		infinite: banners.length > 1,
@@ -38,7 +37,7 @@ const FeatureBanner = () => {
 			{
 				breakpoint: 768,
 				settings: {
-					autoplaySpeed: 3000,
+					autoplaySpeed: 3000
 				}
 			}
 		]
@@ -47,7 +46,7 @@ const FeatureBanner = () => {
 	// If only one banner, render without slider
 	if (banners.length === 1) {
 		return (
-			<section className="relative w-full overflow-hidden">
+			<section className="relative w-full overflow-hidden mt-5 mb-5">
 				{/* Background Animation */}
 				<div className="absolute inset-0 opacity-10 pointer-events-none">
 					<div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full blur-3xl animate-pulse"></div>
@@ -55,17 +54,18 @@ const FeatureBanner = () => {
 					<div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-green-400 to-blue-400 rounded-full blur-2xl animate-bounce animation-delay-500"></div>
 				</div>
 
-				<div className="relative h-64 md:h-80 lg:h-96 w-full shadow-2xl">
-					<Image
-						src={banners[0].image}
-						alt={banners[0].alt}
-						fill
-						className="object-cover"
-						sizes="100vw"
-						priority
-					/>
-					{/* Gradient Overlay */}
-					<div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
+				<div className="relative h-full md:h-80 lg:h-96 w-full shadow-2xl flex justify-center items-center">
+					<div className="relative w-[95%] h-full rounded-2xl overflow-hidden flex justify-center items-center">
+						<Image
+							src={banners[0].image}
+							alt={banners[0].alt}
+							fill
+							className="object-cover"
+							priority
+						/>
+						{/* Gradient Overlay */}
+						<div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
+					</div>
 				</div>
 			</section>
 		);
@@ -73,7 +73,7 @@ const FeatureBanner = () => {
 
 	// Multiple banners with slider
 	return (
-		<section className="relative w-full overflow-hidden">
+		<section className="relative w-full overflow-hidden mt-5 mb-5">
 			{/* Background Animation */}
 			<div className="absolute inset-0 opacity-10 pointer-events-none z-10">
 				<div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full blur-3xl animate-pulse"></div>
@@ -82,20 +82,24 @@ const FeatureBanner = () => {
 				<div className="absolute top-1/4 right-1/4 w-28 h-28 bg-gradient-to-br from-yellow-400 to-red-400 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
 			</div>
 
-			<div className="relative shadow-2xl">
+			<div className="relative">
 				<Slider {...settings}>
 					{banners.map((banner) => (
-						<div key={banner.id} className="relative h-64 md:h-80 lg:h-96 w-full outline-none">
-							<Image
-								src={banner.image}
-								alt={banner.alt}
-								fill
-								className="object-cover"
-								sizes="100vw"
-								priority={banner.id === 1}
-							/>
-							{/* Gradient Overlay */}
-							<div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
+						<div
+							key={banner.id}
+							className="flex justify-center items-center px-2" // padding for spacing between slides
+						>
+							<div className="relative h-64 md:h-80 lg:h-96 w-[95%] mx-auto align-center rounded-2xl overflow-hidden shadow-2xl">
+								<Image
+									src={banner.image}
+									alt={banner.alt}
+									fill
+									className="object-cover"
+									priority={banner.id === 1}
+								/>
+								{/* Gradient Overlay */}
+								<div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
+							</div>
 						</div>
 					))}
 				</Slider>
