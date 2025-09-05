@@ -15,7 +15,7 @@ const internationalPackagesData = [
 		subtitle: "City of Gold",
 		price: "₹45,999",
 		originalPrice: "₹55,999",
-		image: "https://images.pexels.com/photos/161772/dubai-tower-arab-khalifa-161772.jpeg?auto=compress&cs=tinysrgb&w=800",
+		image: "https://images.pexels.com/photos/162031/dubai-tower-burj-khalifa-162031.jpeg?auto=compress&cs=tinysrgb&w=800",
 		duration: "5 Days",
 		groupSize: "2-8 People",
 		location: "United Arab Emirates",

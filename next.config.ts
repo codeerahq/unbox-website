@@ -17,8 +17,6 @@ const nextConfig: NextConfig = {
         pathname: '/photo-**',
       },
     ],
-    // Legacy domains for backward compatibility
-    domains: ["images.pexels.com", "images.unsplash.com"],
     // Image optimization settings
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,
