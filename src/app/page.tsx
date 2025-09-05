@@ -8,6 +8,8 @@ import JoinTheTravelRevolution from "@/components/main-page/JoinTheTravelRevolut
 import PlanByInterest from "@/components/main-page/PlanByInterest";
 import UnSpokenTruth from "@/components/main-page/UnSpokenTruth";
 import React from "react";
+import ShowCaseBanner from "@/components/main-page/ShowCaseBanner";
+import AboutUs from "@/components/main-page/JoinAdventureCTABanner";
 
 const Home = () => {
 	return (
@@ -19,7 +21,9 @@ const Home = () => {
 			<FeatureBanner />
 			<HighlightPackage />
 			<JoinTheTravelRevolution />
+			<ShowCaseBanner />
 			<UnSpokenTruth />
+			<AboutUs />
 			<Faqs />
 		</div>
 	);
