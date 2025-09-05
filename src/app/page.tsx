@@ -1,5 +1,6 @@
 import DomesticPackages from "@/components/main-page/DomesticPackages";
 import Faqs from "@/components/main-page/Faqs";
+import FeatureBanner from "@/components/main-page/FeatureBanner";
 import HereSection from "@/components/main-page/HeroSection";
 import HighlightPackage from "@/components/main-page/HighlightPackage";
 import InternationalPackages from "@/components/main-page/InternationalPackages";
@@ -15,6 +16,7 @@ const Home = () => {
 			<PlanByInterest />
 			<DomesticPackages />
 			<InternationalPackages />
+			<FeatureBanner />
 			<HighlightPackage />
 			<JoinTheTravelRevolution />
 			<UnSpokenTruth />
