@@ -2,7 +2,7 @@ import DomesticPackages from "@/components/main-page/DomesticPackages";
 import Faqs from "@/components/main-page/Faqs";
 import FeatureBanner from "@/components/main-page/FeatureBanner";
 import HereSection from "@/components/main-page/HeroSection";
-import HighlightPackage from "@/components/main-page/HighlightPackage";
+import HighlightPackage from "@/components/main-page/FeaturePackage";
 import InternationalPackages from "@/components/main-page/InternationalPackages";
 import JoinTheTravelRevolution from "@/components/main-page/JoinTheTravelRevolution";
 import PlanByInterest from "@/components/main-page/PlanByInterest";
