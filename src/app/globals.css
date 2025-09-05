@@ -43,6 +43,27 @@
 	animation: spin-slow 8s linear infinite;
 }
 
+/* Animation delay classes */
+.animation-delay-500 {
+	animation-delay: 0.5s;
+}
+
+.animation-delay-1000 {
+	animation-delay: 1s;
+}
+
+.animation-delay-1500 {
+	animation-delay: 1.5s;
+}
+
+.animation-delay-2000 {
+	animation-delay: 2s;
+}
+
+.animation-delay-2500 {
+	animation-delay: 2.5s;
+}
+
 @theme inline {
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
