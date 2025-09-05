@@ -68,7 +68,7 @@ const PlanByInterest = () => {
 		slidesToShow: 5,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 1500,
+		autoplaySpeed: 2500,
 		pauseOnHover: true,
 		centerMode: true,
 		centerPadding: '20px',
@@ -77,12 +77,15 @@ const PlanByInterest = () => {
 		swipeToSlide: true,
 		touchMove: true,
 		arrows: false,
+		variableWidth: false,
+		adaptiveHeight: false,
 		responsive: [
 			{
 				breakpoint: 1280,
 				settings: {
 					slidesToShow: 4,
 					centerPadding: '40px',
+					variableWidth: false,
 				}
 			},
 			{
@@ -90,20 +93,25 @@ const PlanByInterest = () => {
 				settings: {
 					slidesToShow: 3,
 					centerPadding: '30px',
+					variableWidth: false,
 				}
 			},
 			{
 				breakpoint: 768,
 				settings: {
 					slidesToShow: 1,
-					centerPadding: '80px',
+					centerPadding: '20px',
+					variableWidth: false,
+					centerMode: false,
 				}
 			},
 			{
 				breakpoint: 480,
 				settings: {
 					slidesToShow: 1,
-					centerPadding: '40px',
+					centerPadding: '10px',
+					variableWidth: false,
+					centerMode: false,
 				}
 			}
 		]
@@ -142,25 +150,39 @@ const PlanByInterest = () => {
 					<div className="interest-slider relative">
 						<Slider {...sliderSettings}>
 							{circleData.map((item, index) => (
-								<div key={index} className="px-3">
-									<div className="relative group cursor-pointer">
-										<div className="flex flex-col items-center space-y-4 py-6">
-											<div className="relative">
-												<div className="absolute -inset-6 bg-gradient-to-r from-blue-500/0 via-purple-500/10 to-emerald-500/0 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl"></div>
-												<div className="relative transform transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2">
-													<Circle 
-														imageSrc={item.imageSrc}
-														title={item.title}
-														link={item.link}
-													/>
+								<div key={index} className="focus:outline-none">
+									<div className="w-full h-[320px] flex flex-col items-center justify-center px-2">
+										{/* Circle Container - Fixed Size */}
+										<div className="w-36 h-36 flex items-center justify-center mb-6 flex-shrink-0">
+											<div className="group relative cursor-pointer">
+												{/* Background Glow Effect */}
+												<div className="absolute inset-0 w-36 h-36 bg-gradient-to-br from-blue-200/20 via-purple-200/20 to-pink-200/20 rounded-full scale-0 group-hover:scale-125 transition-all duration-700 ease-out blur-xl opacity-0 group-hover:opacity-100"></div>
+												
+												{/* Main Circle */}
+												<div className="relative w-36 h-36 bg-white rounded-full overflow-hidden cursor-pointer shadow-lg group-hover:shadow-2xl transition-all duration-500 ease-out border-4 border-white group-hover:border-gray-50 group-hover:scale-95">
+													<div className="w-full h-full overflow-hidden rounded-full">
+														<img
+															src={item.imageSrc}
+															alt={item.title}
+															className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-125"
+														/>
+													</div>
+													
+													{/* Overlay Effect */}
+													<div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
+													
+													{/* Shine Effect */}
+													<div className="absolute top-2 left-2 w-8 h-8 bg-white/30 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200"></div>
 												</div>
 											</div>
-											<div className="text-center">
-												<h3 className="text-lg font-semibold text-gray-800 group-hover:text-gray-900 transition-colors duration-300">
-													{item.title}
-												</h3>
-												<div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100"></div>
-											</div>
+										</div>
+										
+										{/* Title Container - Fixed Size */}
+										<div className="h-16 flex flex-col items-center justify-start w-full flex-shrink-0">
+											<h3 className="text-lg font-semibold text-gray-800 text-center leading-tight">
+												{item.title}
+											</h3>
+											<div className="w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 mt-2"></div>
 										</div>
 									</div>
 								</div>
@@ -172,20 +194,39 @@ const PlanByInterest = () => {
 
 			{/* Slider Styling */}
 			<style jsx global>{`
+				.interest-slider {
+					width: 100%;
+					max-width: 100%;
+				}
+
 				.interest-slider .slick-list {
-					padding: 20px 0 !important;
+					padding: 20px 0 60px 0 !important;
 					overflow: visible !important;
+					margin: 0 !important;
 				}
 
 				.interest-slider .slick-track {
 					display: flex !important;
 					align-items: center !important;
+					height: 340px !important;
 				}
 
 				.interest-slider .slick-slide {
 					opacity: 0.7 !important;
 					transform: scale(0.9) !important;
-					transition: all 0.3s ease !important;
+					transition: all 0.4s ease !important;
+					height: 320px !important;
+					display: flex !important;
+					align-items: center !important;
+					justify-content: center !important;
+				}
+
+				.interest-slider .slick-slide > div {
+					height: 320px !important;
+					width: 100% !important;
+					display: flex !important;
+					align-items: center !important;
+					justify-content: center !important;
 				}
 
 				.interest-slider .slick-slide.slick-center {
@@ -199,11 +240,34 @@ const PlanByInterest = () => {
 					transform: scale(0.95) !important;
 				}
 
+				/* Mobile specific fixes */
+				@media (max-width: 768px) {
+					.interest-slider .slick-slide {
+						opacity: 1 !important;
+						transform: scale(1) !important;
+						height: 280px !important;
+					}
+					
+					.interest-slider .slick-slide > div {
+						height: 280px !important;
+					}
+
+					.interest-slider .slick-track {
+						height: 300px !important;
+					}
+
+					.interest-slider .slick-list {
+						padding: 10px 0 40px 0 !important;
+					}
+				}
+
 				.interest-slider .slick-dots {
-					bottom: -40px !important;
+					bottom: 0 !important;
+					position: relative !important;
 					display: flex !important;
 					justify-content: center !important;
 					gap: 8px !important;
+					margin-top: 20px !important;
 				}
 
 				.interest-slider .slick-dots li {

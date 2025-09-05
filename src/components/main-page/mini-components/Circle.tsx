@@ -48,9 +48,11 @@ const Circle: React.FC<CircleProps> = ({ imageSrc, title, link }) => {
 			) : (
 				content
 			)}
-			<h1 className="mt-4 text-sm font-medium transition-all duration-500 group-hover:scale-110 group-hover:text-gray-900 text-gray-600 group-hover:font-semibold tracking-wide">
-				{title}
-			</h1>
+			{title && (
+				<h1 className="mt-4 text-sm font-medium transition-all duration-500 group-hover:scale-110 group-hover:text-gray-900 text-gray-600 group-hover:font-semibold tracking-wide">
+					{title}
+				</h1>
+			)}
 		</div>
 	);
 };

@@ -63,9 +63,9 @@ const HighlightPackage = () => {
 	// Render single package card
 	const renderPackageCard = (pkg: typeof featuredDomesticPackage, type: 'domestic' | 'international') => (
 		<div className="relative bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-white/50 hover:shadow-3xl transition-all duration-500 group max-w-5xl mx-auto">
-			<div className="grid lg:grid-cols-2 gap-0 min-h-[400px] lg:min-h-[500px]">
+			<div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[400px] lg:min-h-[500px]">
 				{/* Image Section */}
-				<div className="relative h-80 lg:h-auto overflow-hidden">
+				<div className="relative h-80 lg:h-auto overflow-hidden order-1 lg:order-none">
 					{/* Popular Badge */}
 					{pkg.isPopular && (
 						<div className="absolute top-6 left-6 z-20 px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-white text-xs font-semibold rounded-full shadow-lg">
@@ -94,7 +94,7 @@ const HighlightPackage = () => {
 				</div>
 
 				{/* Content Section */}
-				<div className="relative p-8 lg:p-12 flex flex-col justify-center">
+				<div className="relative p-6 md:p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-none">
 					{/* Location */}
 					<div className="flex items-center gap-2 mb-4">
 						<MapPin className={`w-4 h-4 ${type === 'domestic' ? 'text-yellow-500' : 'text-blue-500'}`} />
@@ -102,18 +102,18 @@ const HighlightPackage = () => {
 					</div>
 
 					{/* Title & Subtitle */}
-					<h3 className={`text-3xl lg:text-4xl font-bold text-gray-900 mb-2 group-hover:${type === 'domestic' ? 'text-yellow-600' : 'text-blue-600'} transition-colors duration-300`}>
+					<h3 className={`text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 group-hover:${type === 'domestic' ? 'text-yellow-600' : 'text-blue-600'} transition-colors duration-300`}>
 						{pkg.title}
 					</h3>
-					<p className={`text-lg font-medium mb-4 ${type === 'domestic' ? 'text-yellow-600' : 'text-blue-600'}`}>
+					<p className={`text-base md:text-lg font-medium mb-4 ${type === 'domestic' ? 'text-yellow-600' : 'text-blue-600'}`}>
 						{pkg.subtitle}
 					</p>
 					
 					{/* Description */}
-					<p className="text-gray-600 mb-6 leading-relaxed">{pkg.description}</p>
+					<p className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base">{pkg.description}</p>
 
 					{/* Package Details */}
-					<div className="flex items-center gap-6 mb-6 text-sm text-gray-600">
+					<div className="flex flex-wrap items-center gap-4 md:gap-6 mb-6 text-sm text-gray-600">
 						<div className="flex items-center gap-2">
 							<Calendar className={`w-4 h-4 ${type === 'domestic' ? 'text-yellow-500' : 'text-blue-500'}`} />
 							<span>{pkg.duration}</span>
@@ -125,9 +125,9 @@ const HighlightPackage = () => {
 					</div>
 
 					{/* Features */}
-					<div className="mb-8">
+					<div className="mb-6 md:mb-8">
 						<p className="text-sm font-semibold text-gray-900 mb-3">What&apos;s Included:</p>
-						<div className="grid grid-cols-2 gap-2">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-2">
 							{pkg.features.map((feature, index) => (
 								<div key={index} className="flex items-center gap-2">
 									<div className={`w-1.5 h-1.5 rounded-full ${type === 'domestic' ? 'bg-yellow-500' : 'bg-blue-500'}`}></div>
@@ -138,11 +138,11 @@ const HighlightPackage = () => {
 					</div>
 
 					{/* Pricing & CTA */}
-					<div className="flex items-center justify-between">
-						<div>
+					<div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+						<div className="w-full lg:w-auto">
 							<p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Starting from</p>
 							<div className="flex items-baseline gap-3">
-								<span className="text-3xl font-bold text-gray-900">{pkg.price}</span>
+								<span className="text-2xl md:text-3xl font-bold text-gray-900">{pkg.price}</span>
 								{pkg.originalPrice && (
 									<span className="text-lg text-gray-400 line-through">{pkg.originalPrice}</span>
 								)}
@@ -152,7 +152,7 @@ const HighlightPackage = () => {
 
 						<button 
 							onClick={() => handleBookNow(pkg.title)}
-							className={`px-8 py-4 font-semibold rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center gap-2 group text-white ${
+							className={`w-full lg:w-auto px-6 md:px-8 py-3 md:py-4 font-semibold rounded-xl md:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center justify-center gap-2 group text-white ${
 								type === 'domestic' 
 									? 'bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600' 
 									: 'bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600'

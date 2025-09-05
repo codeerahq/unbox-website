@@ -8,9 +8,9 @@ const ShowCaseBanner = () => {
 			<Image
 				src="https://images.unsplash.com/photo-1753295687824-22b36f3daa33?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 				alt="Showcase Banner"
-				layout="fill"
-				objectFit="cover"
-				className="absolute inset-0 z-0 opacity-70"
+				fill
+				sizes="100vw"
+				className="absolute inset-0 z-0 opacity-70 object-cover"
 			/>
 
 			{/* Content */}

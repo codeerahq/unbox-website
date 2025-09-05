@@ -9,9 +9,9 @@ const AboutUs = () => {
 				<Image
 					src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 					alt="Showcase Banner"
-					layout="fill"
-					objectFit="cover"
-					className="absolute inset-0 z-0 opacity-70"
+					fill
+					sizes="100vw"
+					className="absolute inset-0 z-0 opacity-70 object-cover"
 				/>
 
 				{/* Content */}

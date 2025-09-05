@@ -60,6 +60,7 @@ const FeatureBanner = () => {
 							src={banners[0].image}
 							alt={banners[0].alt}
 							fill
+							sizes="95vw"
 							className="object-cover"
 							priority
 						/>
@@ -94,6 +95,7 @@ const FeatureBanner = () => {
 									src={banner.image}
 									alt={banner.alt}
 									fill
+									sizes="95vw"
 									className="object-cover"
 									priority={banner.id === 1}
 								/>
