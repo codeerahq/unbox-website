@@ -5,7 +5,8 @@
 
 /* Custom animations for enhanced UI */
 @keyframes float {
-	0%, 100% {
+	0%,
+	100% {
 		transform: translateY(0px);
 	}
 	50% {
@@ -14,7 +15,8 @@
 }
 
 @keyframes bounce-x {
-	0%, 100% {
+	0%,
+	100% {
 		transform: translateX(0px);
 	}
 	50% {
@@ -171,11 +173,17 @@
 	--sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Custom highlight text color */
+::selection {
+	background-color: var(--primary);
+	color: var(--primary-foreground);
+}
+
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+	* {
+		@apply border-border outline-ring/50;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
 	}
 }
